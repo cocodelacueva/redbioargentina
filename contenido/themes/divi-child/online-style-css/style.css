@@ -1,0 +1,201 @@
+/*
+ Theme Name:     Divi Child Theme
+ Theme URI:      http://www.elegantthemes.com/gallery/divi/
+ Description:    Divi Child Theme
+ Author:         LaCueva.tv
+ Author URI:     http://lacueva.tv
+ Template:       Divi
+ Version:        1.0.0
+*/
+ 
+@import url("../Divi/style.css");
+@charset "utf-8";
+
+
+
+/*menu*/
+/*menu secundario superior*/
+.et_fixed_nav #top-header {
+	z-index: 11;
+}
+
+#et-info, #et-secondary-menu > ul > li a {
+	background-color: #0080c3;
+	padding: 7px 10px;
+}
+
+#et-info, #et-secondary-menu > ul > li:first-child a {
+	background-color: #339900;
+}
+
+#et-info, #et-secondary-menu > ul > li:last-child a {
+	background-color: #c50000;
+}
+
+/*menu principal*/
+#main-header.et-fixed-header {
+	box-shadow: none!important;
+}
+
+#logo {
+	position: absolute;
+	top:-24px;
+	z-index: 111;
+}
+
+
+/*sidebar - widgets*/
+.widgettitle {
+	text-transform: uppercase;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#text-4, #text-3, #text-5{
+	background: #0080c3;
+    padding: 10px 20px;
+    color: white;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#text-4 h4, #text-3 h4, #text-5 h4 {
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#text-4 form input, #text-5 form input {
+	width: 100%;
+	display: block;
+	margin: 10px 0;
+}
+
+#text-4 form input[type=submit], #text-5 form input[type=submit] {
+	display: block;
+	width: 100%;
+	border: none;
+	background-color: #339900;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#text-3 a {
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+	background-color: #c50000;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px;
+}
+
+#text-3 {
+	background: url(http://lacueva-sitios.com/demo/redbioargentina/contenido/uploads/sidebar-asos-back.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#text-4, #text-5 {
+	background: url(http://lacueva-sitios.com/demo/redbioargentina/contenido/uploads/sidebar-subsc-back.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.et_pb_widget ul li {
+	margin-bottom: 1.5em;	
+	line-height: 17px;
+}
+
+/*envialo simple widget*/
+.emailMarketingSubscriptionFormContainer.formID_subscriptionForm-83251-3 {
+    background: transparent!important;
+    font-family: inherit!important;
+    font-size: inherit!important;
+    color: #fff!important;
+    margin-top: 0px!important;
+    margin-right: 0px!important;
+    margin-bottom: 0px!important;
+    padding-top: 0px!important;
+    padding-right: 0px!important;
+    padding-bottom: 0px!important;
+    padding-left: 0px!important;
+    width: 100%!important;
+}
+
+.emailMarketingSubscriptionFormContainer.formID_subscriptionForm-83251-3 label {
+	display:none!important;
+}
+
+.submitButton {
+	font-family: inherit!important;
+    font-size: 16px!important;
+    cursor: pointer!important;
+    text-transform: uppercase!important;
+    color: #fff!important;
+    background-color: #339900!important;
+    border: none!important;
+    padding: 10px 20px!important;
+    border-radius: 5px!important;
+    text-align: center!important;
+    width: 100%!important;
+}
+
+.emailMarketingSubscriptionTextField {
+	height: 40px!important;
+}
+
+/*tipografia*/
+.h2-title {
+	text-transform: uppercase;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.h3-title {
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.tipo-en-blanco {
+	color:#fff!important;
+}
+
+.tipo-en-rojo {
+	color:#c50000!important;
+}
+
+.tipo-en-azul {
+	color:#0080c3!important;
+}
+
+.entry-title {
+	text-transform: uppercase;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+}
+
+.et_pb_post h2 {
+	text-align: left;
+}
+
+/*tipo fullwidth header*/
+.et_pb_fullwidth_header_subhead small {
+	font-size: 16px;
+}
+
+
+/*media queries*/
+@media (max-width: 980px) {
+	#logo {
+		position: static;
+	}	
+}
