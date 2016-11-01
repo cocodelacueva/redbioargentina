@@ -218,3 +218,14 @@
 		position: static;
 	}	
 }
+
+
+@media (max-width: 768px) {
+	.h2-title {
+		font-size: 28px;
+	}
+
+	.h3-title {
+		font-size: 18px;
+	}
+}
