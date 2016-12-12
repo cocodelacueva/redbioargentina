@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - All In One WP Security &#38; Firewall - Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-10-22 00:56:21+0000\n"
+"PO-Revision-Date: 2016-12-10 21:25:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -310,7 +310,7 @@ msgstr "Fuiste desconectado debido a que acaba de cambiar el nombre de usuario \
 #: classes/wp-security-user-login.php:519
 #: classes/wp-security-user-login.php:523
 msgid "Please log back in to continue."
-msgstr "Por favor, vuelva a iniciar sesión para continuar."
+msgstr "Por favor, vuelva a iniciar la sesión para continuar."
 
 #: classes/wp-security-user-login.php:518
 msgid "Your session has expired because it has been over %d minutes since your last login."
@@ -318,7 +318,7 @@ msgstr "Su sesión ha caducado ya que han pasado más de %d minutos desde el úl
 
 #: classes/wp-security-user-login.php:351
 msgid "After clicking the above link you will be able to login to the WordPress administration panel."
-msgstr "Después de hacer clic en el enlace anterior podrás iniciar sesión en el panel de administración de WordPress."
+msgstr "Después de hacer clic en el enlace anterior podrás iniciar una sesión en el panel de administración de WordPress."
 
 #: classes/wp-security-user-login.php:348
 msgid "Unlock Request Notification"
@@ -334,7 +334,7 @@ msgstr "Un evento de bloqueo se ha producido debido a demasiados intentos fallid
 
 #: classes/wp-security-user-login.php:269
 msgid "Site Lockout Notification"
-msgstr "Notificación de bloqueo del sitio"
+msgstr "Notificación de Bloqueo del Sitio"
 
 #: classes/wp-security-user-login.php:146
 msgid "<strong>ACCOUNT PENDING</strong>: Your account is currently not active. An administrator needs to activate your account before you can login."
@@ -403,11 +403,11 @@ msgstr "modificado en:"
 
 #: classes/wp-security-file-scan.php:715
 msgid "The following files were added to your host"
-msgstr "Los siguientes archivos fueron agregados a tu anfitrión."
+msgstr "Los siguientes archivos fueron agregados a tu servidor."
 
 #: classes/wp-security-file-scan.php:673
 msgid "Even though the database scan has not revealed any suspicious entries, this does not necessarily mean that your site is actually completely clean or not compromised."
-msgstr "A pesar de que el análisis de bases de datos no ha revelado ninguna entrada sospechosa, esto no significa necesariamente que su sitio actual está completamente limpio o comprometido."
+msgstr "A pesar de que el análisis de base de datos no ha revelado ninguna entrada sospechosa, esto no significa necesariamente que su sitio actual está completamente limpio o no esta comprometido."
 
 #: classes/wp-security-file-scan.php:667
 msgid "DB Scan was completed successfully. No suspicious entries found."
@@ -451,7 +451,7 @@ msgstr "No se encontró entradas sospechosas en la tabla de usermeta"
 
 #: classes/wp-security-file-scan.php:571
 msgid "Scanning usermeta table........."
-msgstr "Escaneado la tabla de usermeta........."
+msgstr "Escaneando la tabla de usermeta........."
 
 #: classes/wp-security-file-scan.php:567
 msgid "No suspicious entries found in postmeta table"
@@ -459,7 +459,7 @@ msgstr "No se encontró entradas sospechosas en la tabla de postmeta"
 
 #: classes/wp-security-file-scan.php:543
 msgid "Scanning postmeta table........."
-msgstr "exploración de tabla postmeta........."
+msgstr "Escaneando la tabla postmeta........."
 
 #: classes/wp-security-file-scan.php:539
 msgid "No suspicious entries found in comments table"
@@ -467,7 +467,7 @@ msgstr "No se encontró entradas sospechosas en la tabla de comentarios"
 
 #: classes/wp-security-file-scan.php:492
 msgid "Scanning comments table........."
-msgstr "Escaneado comentarios de tabla........."
+msgstr "Escaneando los comentarios de tabla........."
 
 #: classes/wp-security-file-scan.php:488
 msgid "No suspicious entries found in links table"
@@ -481,7 +481,7 @@ msgstr "Posible entrada sospechosa - %s"
 
 #: classes/wp-security-file-scan.php:440
 msgid "Scanning links table........."
-msgstr "Escaneado enlaces de tabla........."
+msgstr "Escaneando enlaces de tabla........."
 
 #: classes/wp-security-file-scan.php:436
 msgid "No suspicious entries found in posts table"
@@ -489,7 +489,7 @@ msgstr "No hay entradas sospechosas que se encuentran en la tabla mensajes"
 
 #: classes/wp-security-file-scan.php:427
 msgid "Possible suspicious entry found (for Post ID: %s) in the following column - %s "
-msgstr "Posible entrada sospechosa encontrada (por ID del anuncio: %s) de la siguiente columna - %s"
+msgstr "Una posible entrada sospechosa encontrada (por el ID de la entrada: %s) de la siguiente columna - %s"
 
 #: classes/wp-security-file-scan.php:387
 msgid "Scanning posts table........."
@@ -497,11 +497,11 @@ msgstr "Escaneando tabla de entradas........."
 
 #: classes/wp-security-file-scan.php:383
 msgid "No suspicious entries found in options table"
-msgstr "No hay entradas sospechosas encontradas en tabla de opciones"
+msgstr "No se ha encontrado entradas sospechosas en la tabla de opciones"
 
 #: classes/wp-security-file-scan.php:374
 msgid "Possible suspicious entry found (for option_id: %s) - %s "
-msgstr "Posible entrada sospechosa encontrada (para la opción id:%s) - %s"
+msgstr "Una posible entrada sospechosa encontrada (para option_id: %s) - %s"
 
 #: classes/wp-security-file-scan.php:360
 msgid "The options table entry with known pharma hack for option_id %s with option_name %s was successfully deleted"
@@ -517,15 +517,15 @@ msgstr "%s y option_id: %s"
 
 #: classes/wp-security-file-scan.php:286
 msgid "Scanning options table........."
-msgstr "Opciones de análisis de tabla ........."
+msgstr "Escaneando las opciones de la tabla ........."
 
 #: classes/wp-security-file-scan.php:282
 msgid "Starting DB scan.....please wait while the plugin scans your database......."
-msgstr "Al comenzar la exploración base de datos ..... por favor espere mientras el plugin explora su base de datos ......."
+msgstr "Comenzando el escaneo de la base de datos ..... por favor espere mientras el plugin escanea su base de datos ......."
 
 #: classes/wp-security-file-scan.php:77
 msgid "Login to your site to view the scan details."
-msgstr "Ingrese a su sitio para ver los detalles del análisis."
+msgstr "Inicie una sesión a su sitio para ver los detalles del análisis."
 
 #: classes/wp-security-file-scan.php:68
 msgid "A summary of the scan results is shown below:"
@@ -533,15 +533,15 @@ msgstr "Un resumen de los resultados del escaneo se muestra a continuación:"
 
 #: classes/wp-security-file-scan.php:67
 msgid ". Scan was generated on"
-msgstr ". Scan fue generada el"
+msgstr ". Scan fue generado en"
 
 #: classes/wp-security-file-scan.php:67
 msgid "A file change was detected on your system for site URL"
-msgstr "Se ha detectado un cambio en un archivo en el sistema de dirección URL del sitio"
+msgstr "Se ha detectado un cambio en un archivo de su sistema de dirección para el URL del sitio"
 
 #: classes/wp-security-file-scan.php:65
 msgid "All In One WP Security - File change detected!"
-msgstr "All In One WP Security - Cambio de archivo detectado!"
+msgstr "¡All In One WP Security - Cambio de archivo detectado!"
 
 #: classes/wp-security-captcha.php:115
 msgid "twenty"
@@ -634,7 +634,7 @@ msgstr "generada en"
 
 #: classes/wp-security-backup.php:191
 msgid "Attached is your latest DB backup file for site URL"
-msgstr "Adjunto está el archivo de copia de seguridad más reciente de BD para dirección URL del sitio."
+msgstr "Adjunto está el archivo de copia de seguridad más reciente de BD para la URL de la dirección del sitio."
 
 #: classes/wp-security-backup.php:189
 msgid "All In One WP Security - Site Database Backup"
@@ -686,7 +686,7 @@ msgstr "Habilitar Renombrar la Página de Entrada"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:82
 msgid "Enable IP blocking for 404 detection"
-msgstr "Activar el bloqueo de IP para la detección 404"
+msgstr "Habilitar el bloqueo de IP para la detección 404"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:80
 msgid "Enable Pingback Vulnerability Protection"
@@ -698,11 +698,11 @@ msgstr "Habilitar Firewall Basico"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:75
 msgid "IP and User Agent Blacklisting"
-msgstr "IP y el Agente de Usuario Blacklisting"
+msgstr "IP y lista negra de agentes de usuario"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:71
 msgid "WordPress Files Access"
-msgstr "Acceso archivos de WordPress"
+msgstr "Acceso a los archivos de WordPress"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:55
 msgid "Registration Approval"
@@ -714,15 +714,15 @@ msgstr "Inicio de sesión IP Whitelisting"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:47
 msgid "Lost Password Captcha"
-msgstr "Recuperar contraseña Captcha"
+msgstr "Contraseña perdida Captcha"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:45
 msgid "Custom Login Captcha"
-msgstr "Captcha para Sesión de Inicio Personalizado"
+msgstr "Captcha de inicio de sesión personalizado"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:38
 msgid "Change Display Name"
-msgstr "Cambiar de nombre a mostrar"
+msgstr "Cambiar nombre de visualización"
 
 #: classes/grade-system/wp-security-feature-item-manager.php:29
 msgid "Remove WP Generatore Meta Tag"
@@ -762,7 +762,7 @@ msgstr "Información de búsqueda WHOIS"
 
 #: admin/wp-security-whois-menu.php:22
 msgid "WhoIS Lookup"
-msgstr "búsqueda WhoIS"
+msgstr "Búsqueda WhoIS"
 
 #: admin/wp-security-user-registration-menu.php:228
 msgid "Check this if you want to insert a captcha form on the WordPress user registration page (if you allow user registration)."
@@ -818,11 +818,11 @@ msgstr "Esta característica se establecerá automáticamente una nueva cuenta r
 
 #: admin/wp-security-user-registration-menu.php:120
 msgid "If your site allows people to create their own accounts via the WordPress registration form, then you can minimize SPAM or bogus registrations by manually approving each registration."
-msgstr "Si el sitio permite a las personas crear sus propias cuentas a través del formulario de registro de WordPress, entonces usted puede minimizar el Spam o registros falsos al aprobar manualmente cada registro."
+msgstr "Si su sitio permite a las personas crear sus propias cuentas a través del formulario de registro de WordPress, puede minimizar el SPAM o registros falsos aprobando manualmente cada registro."
 
 #: admin/wp-security-user-registration-menu.php:116
 msgid "Manually Approve New Registrations"
-msgstr "Aprobar manualmente los Nuevos Registros"
+msgstr "Aprobar manualmente nuevos registros"
 
 #: admin/wp-security-user-registration-menu.php:112
 msgid "User Registration Settings"
@@ -851,11 +851,11 @@ msgstr "Usuarios conectados Actualmente"
 
 #: admin/wp-security-user-login-menu.php:490
 msgid "You can also instantly log them out by clicking on the \"Force Logout\" link when you hover over the row in the User Id column."
-msgstr "También puedes sacarlos al instante haciendo clic en el enlace \"Salir a la Fuerza\" cuando se pasa sobre la fila en la columna de la identificación del usuario."
+msgstr "También puede desconectarlo al hacer clic en el enlace \"Forzar el cierre de sesión\" cuando pase el cursor sobre la fila de la columna Id. De usuario."
 
 #: admin/wp-security-user-login-menu.php:489
 msgid "If you suspect there is a user or users who are logged in which should not be, you can block them by inspecting the IP addresses from the data below and adding them to your blacklist."
-msgstr "Si usted sospecha que hay un usuario o usuarios que han iniciado sesión en la que no debe ser, puede bloquearlas mediante la inspección de las direcciones IP de los datos a continuación y añadirlos a su lista negra."
+msgstr "Si sospecha que hay un usuario o usuarios conectados que no deberían estar, puede bloquearlos inspeccionando las direcciones IP de los datos siguientes y agregándolos a su lista negra."
 
 #: admin/wp-security-user-login-menu.php:488
 msgid "This tab displays all users who are currently logged into your site."
@@ -875,7 +875,7 @@ msgstr "¡Verificación nonce falló para los usuarios registrados en la lista!"
 
 #: admin/wp-security-user-login-menu.php:427
 msgid "The information below can be handy if you need to do security investigations because it will show you the last 50 recent login events by username, IP address and time/date."
-msgstr "La siguiente información puede ser útil si usted tiene que hacer las investigaciones de seguridad, ya que le mostrará los últimos 50 eventos de inicio de sesión recientes por nombre de usuario, la dirección IP y la hora / fecha."
+msgstr "La información a continuación puede ser útil si necesita realizar investigaciones de seguridad porque le mostrará los últimos 50 eventos de inicio de sesión recientes por nombre de usuario, dirección IP y hora / fecha."
 
 #: admin/wp-security-user-login-menu.php:426
 msgid "This tab displays the login activity for WordPress admin accounts registered with your site."
@@ -891,23 +891,23 @@ msgstr "Desconectar el Usuario WP después de XX minutos"
 
 #: admin/wp-security-user-login-menu.php:397
 msgid "Check this if you want to force a wp user to be logged out after a configured amount of time"
-msgstr "Seleccione esta opción si desea forzar a salir un usuario de WP, pasada una cantidad de tiempo configurada."
+msgstr "Seleccione esta opción si desea forzar a salir un usuario de WP a que se cierre la sesión después de una cantidad de tiempo configurada"
 
 #: admin/wp-security-user-login-menu.php:394
 msgid "Enable Force WP User Logout"
-msgstr "Habilitar salida forzada de usuarios"
+msgstr "Habilitar el cierre de sesión de usuario de Fuerza WP"
 
 #: admin/wp-security-user-login-menu.php:382
 msgid "Force User Logout Options"
-msgstr "Opciones de forzar salida de usuarios"
+msgstr "Forzar las opciones de cierre de sesión del usuario"
 
 #: admin/wp-security-user-login-menu.php:377
 msgid "This feature allows you to specify a time period in minutes after which the admin session will expire and the user will be forced to log back in."
-msgstr "Esta característica le permite especificar un período de tiempo en cuestión de minutos después de lo cual la sesión de administrador expirará y el usuario se verá obligado a volver a iniciar sesión."
+msgstr "Esta función le permite especificar un período de tiempo en minutos después del cual la sesión de administración expirará y el usuario se verá obligado a iniciar sesión nuevamente."
 
 #: admin/wp-security-user-login-menu.php:376
 msgid "Setting an expiry period for your WP administration session is a simple way to protect against unauthorized access to your site from your computer."
-msgstr "Establecer un período de caducidad para su sesión de administración WP es una forma sencilla de proteger contra el acceso no autorizado a su sitio web desde su ordenador."
+msgstr "Establecer un período de vencimiento para su sesión de administración de WP es una forma sencilla de protegerse contra el acceso no autorizado a su sitio desde su computadora."
 
 #: admin/wp-security-user-login-menu.php:348
 msgid "You entered a non numeric value for the logout time period field. It has been set to the default value."
@@ -915,16 +915,16 @@ msgstr "Ha introducido un valor no numérico para el campo Período de tiempo de
 
 #: admin/wp-security-user-login-menu.php:320
 msgid "Click this button if you wish to delete all failed login records in one go."
-msgstr "Haga clic en este botón si desea borrar todos los registros de conexión fallados de una sola vez."
+msgstr "Haga clic en este botón si desea borrar todos los registros de conexión fallidos de una sola vez."
 
 #: admin/wp-security-user-login-menu.php:314
 #: admin/wp-security-user-login-menu.php:323
 msgid "Delete All Failed Login Records"
-msgstr "Eliminar todos los registros de conexión fallados"
+msgstr "Eliminar todos los registros de conexión fallidos"
 
 #: admin/wp-security-user-login-menu.php:293
 msgid "The information below can be handy if you need to do security investigations because it will show you the IP range, username and ID (if applicable) and the time/date of the failed login attempt."
-msgstr "La siguiente información puede ser útil si usted tiene que hacer las investigaciones de seguridad, ya que le mostrará el rango de IP, nombre de usuario y el ID (si procede) y la hora / fecha del intento fallido de login."
+msgstr "La información a continuación puede ser útil si necesita realizar investigaciones de seguridad porque le mostrará el rango de IP, nombre de usuario e ID (si corresponde) y la hora / fecha del intento fallido de inicio de sesión."
 
 #: admin/wp-security-user-login-menu.php:292
 msgid "This tab displays the failed login attempts for your site."
@@ -1012,7 +1012,7 @@ msgstr "Seleccione esta opción si desea activar la función de bloqueo de inici
 
 #: admin/wp-security-user-login-menu.php:183
 msgid "Enable Login Lockdown Feature"
-msgstr "Activar característica de bloqueo de inicio de sesión"
+msgstr "Habilitar la característica de bloqueo de inicio de sesión"
 
 #: admin/wp-security-user-login-menu.php:171
 msgid "Login Lockdown Options"
@@ -1841,7 +1841,7 @@ msgstr "Seleccione esta opción si desea que todos los visitantes, excepto los q
 
 #: admin/wp-security-maintenance-menu.php:105
 msgid "Enable Front-end Lockout"
-msgstr "Activar Bloqueo Front-end"
+msgstr "Habilitar el Bloqueo en la Parte Frontal"
 
 #: admin/wp-security-maintenance-menu.php:100
 msgid "Locking your site down to general visitors can be useful if you are investigating some issues on your site or perhaps you might be doing some maintenance and wish to keep out all traffic for security reasons."
@@ -2305,7 +2305,7 @@ msgstr "Habilitar Protección 5G de Firewall"
 
 #: admin/wp-security-firewall-menu.php:545
 msgid "5G Blacklist/Firewall Settings"
-msgstr "5G opciones Lista negra/Firewall"
+msgstr "5G opciones Lista negra/Cortafuegos"
 
 #: admin/wp-security-firewall-menu.php:539
 msgid "Therefore the 5G firewall rules should not have any impact on your site's general functionality but if you wish you can take a %s of your .htaccess file before proceeding."
@@ -2583,7 +2583,7 @@ msgstr "esta activado."
 #: admin/wp-security-firewall-menu.php:147
 #: admin/wp-security-firewall-menu.php:194
 msgid "Enable Pingback Protection"
-msgstr "Activar protección Pingback"
+msgstr "Habilitar protección Pingback"
 
 #: admin/wp-security-firewall-menu.php:147
 msgid "Currently the "
@@ -2608,7 +2608,7 @@ msgstr "Esto no debería tener ningún impacto en la funcionalidad general de su
 #: admin/wp-security-firewall-menu.php:127
 #: admin/wp-security-firewall-menu.php:532
 msgid "Firewall Settings"
-msgstr "Opciones de Firewall"
+msgstr "Ajustes de Cortafuegos"
 
 #: admin/wp-security-firewall-menu.php:118
 #: admin/wp-security-firewall-menu.php:692 admin/wp-security-spam-menu.php:104
@@ -3707,7 +3707,7 @@ msgstr "Twitter, Google+ o por correo electrónico para mantenerse al día sobre
 
 #: admin/wp-security-dashboard-menu.php:78
 msgid "Follow us"
-msgstr "Síguenos"
+msgstr "Síganos"
 
 #: admin/wp-security-dashboard-menu.php:77
 msgid "Page"
@@ -3836,7 +3836,7 @@ msgstr "Seleccione esta opción si desea insertar código de imagen en un formul
 
 #: admin/wp-security-brute-force-menu.php:544
 msgid "Enable Captcha On Custom Login Form"
-msgstr "Activar CAPTCHA en el Formulario de Acceso Personalizado"
+msgstr "Habilitar CAPTCHA en el Formulario de Acceso Personalizado"
 
 #: admin/wp-security-brute-force-menu.php:535
 msgid "Custom Login Form Captcha Settings"
@@ -4341,11 +4341,11 @@ msgstr "Fuerza Bruta"
 
 #: admin/wp-security-admin-init.php:224
 msgid "Firewall"
-msgstr "Firewall"
+msgstr "Cortafuegos"
 
 #: admin/wp-security-admin-init.php:219
 msgid "Blacklist Manager"
-msgstr "Administrados listas negras"
+msgstr "Administrador de Lista Negra"
 
 #: admin/wp-security-admin-init.php:215
 msgid "WHOIS Lookup"
@@ -4353,7 +4353,7 @@ msgstr "Búsqueda WHOIS"
 
 #: admin/wp-security-admin-init.php:213
 msgid "Filesystem Security"
-msgstr "Seguridad de archivos"
+msgstr "Seguridad del sistema de archivos"
 
 #: admin/wp-security-admin-init.php:209
 msgid "Database Security"

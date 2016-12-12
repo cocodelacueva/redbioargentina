@@ -2,7 +2,7 @@ var ET_PageBuilder = ET_PageBuilder || {};
 
 window.wp = window.wp || {};
 
-window.et_builder_version = '3.0.15';
+window.et_builder_version = '3.0.23';
 
 ( function($) {
 	var et_error_modal_shown = window.et_error_modal_shown,
@@ -697,7 +697,7 @@ window.et_builder_version = '3.0.15';
 						column_attributes.global_parent_cid = that.model.get( 'global_parent_cid' );
 					}
 
-					if ( '' !== layout_specialty ) {
+					if ( typeof layout_specialty[index] !== 'undefined' && layout_specialty[index] === '1' ) {
 						column_attributes.layout_specialty = layout_specialty[index];
 						column_attributes.specialty_columns = parseInt( specialty_columns );
 					}
@@ -864,7 +864,8 @@ window.et_builder_version = '3.0.15';
 					update_global      = false,
 					global_holder_id   = 'row' === this.model.get( 'layout_type' ) ? current_row : parent_id,
 					global_holder_view = ET_PageBuilder_Layout.getView( global_holder_id ),
-					history_noun       = this.options.model.get( 'layout_type' ) === 'row_inner' ? 'saved_row' : 'saved_' + this.options.model.get( 'layout_type' );
+					history_noun       = this.options.model.get( 'layout_type' ) === 'row_inner' ? 'saved_row' : 'saved_' + this.options.model.get( 'layout_type' ),
+					$modal_container   = clicked_button.closest( '.et_pb_modal_settings_container' );
 
 					if ( 'on' === specialty_row ) {
 						global_holder_id = global_holder_view.model.get( 'parent' );
@@ -886,6 +887,10 @@ window.et_builder_version = '3.0.15';
 						global_module_cid = typeof global_holder_view.model.get( 'global_parent_cid' ) !== 'undefined' ? global_holder_view.model.get( 'global_parent_cid' ) : global_holder_id;
 
 					et_pb_update_global_template( global_module_cid );
+				}
+
+				if ( $modal_container.length ) {
+					$modal_container.find( '.et-pb-modal-close' ).click();
 				}
 			}
 		} );
@@ -2346,8 +2351,9 @@ window.et_builder_version = '3.0.15';
 					view = new ET_PageBuilder.ColumnSettingsView( view_settings );
 				} else if ( this.attributes['data-open_view'] === 'saved_templates' ) {
 					view = new ET_PageBuilder.TemplatesModal( { attributes: { 'data-parent_cid' : this.attributes['data-parent_cid'] } } );
+				} else if ( this.attributes['data-open_view'] === 'help' ) {
+					view = new ET_PageBuilder.HelpView();
 				}
-
 				// do not proceed and return false if no template for this module exist yet
 				if ( typeof view.attributes !== 'undefined' && 'no_template' === view.attributes['data-no_template'] ) {
 					return false;
@@ -2709,7 +2715,7 @@ window.et_builder_version = '3.0.15';
 						custom_css_option_value = $this_el.val();
 
 						// replace new lines with || in Custom CSS settings
-						setting_value = '' !== custom_css_option_value ? custom_css_option_value.replace( /\n/g, '\|\|' ) : '';
+						setting_value = '' !== custom_css_option_value ? custom_css_option_value.replace( /(?:\r\n|\r|\n)/g, '\|\|' ) : '';
 					} else if ( $this_el.hasClass( 'et-pb-range-input' ) || $this_el.hasClass( 'et-pb-validate-unit' ) ) {
 						// Process range sliders. Sanitize for valid unit first
 						var et_validate_default_unit = $this_el.hasClass( 'et-pb-range-input' ) ? 'no_default_unit' : '';
@@ -3708,7 +3714,12 @@ window.et_builder_version = '3.0.15';
 									icon_index_number = parseInt( current_symbol_val.replace( /%/g, '' ) );
 									$current_symbol   = $this_icon_list.find( 'li' ).eq( icon_index_number );
 								} else {
-									$current_symbol = $this_icon_list.find( 'li[data-icon="' + current_symbol_val + '"]' );
+									// set the 1st icon as active if wrong value saved for current_symbol_val
+									if ( '"' === current_symbol_val ) {
+										$current_symbol = $this_icon_list.find( 'li' ).eq( 0 );
+									} else {
+										$current_symbol = $this_icon_list.find( 'li[data-icon="' + current_symbol_val + '"]' );
+									}
 								}
 
 								$current_symbol.addClass( active_symbol_class );
@@ -4601,6 +4612,12 @@ window.et_builder_version = '3.0.15';
 						return true;
 					}
 
+					if ( $this_el.closest( '.et-pb-custom-css-option' ).length ) {
+						// Custom CSS settings content should be modified before it is added to the shortcode attribute
+						// replace new lines with || in Custom CSS settings
+						setting_value = '' !== setting_value ? setting_value.replace( /(?:\r\n|\r|\n)/g, '\|\|' ) : '';
+					}
+
 					attributes[ id ] = setting_value;
 				} );
 
@@ -5026,6 +5043,105 @@ window.et_builder_version = '3.0.15';
 				ET_PageBuilder_AB_Testing.set( this, event );
 			}
 		} );
+
+		ET_PageBuilder.HelpView = window.wp.Backbone.View.extend({
+			tagName: 'div',
+
+			id: 'et-builder-help',
+
+			className: 'et_pb_modal_settings',
+
+			template : _.template( $( '#et-builder-help-template' ).html() ),
+
+			isOSX: navigator.userAgent.indexOf('Mac OS X') != -1,
+
+			renderKbd: function(kbd) {
+				var key = kbd;
+
+				if (key === 'super') {
+					if (this.isOSX) {
+						key = 'cmd';
+					} else {
+						key = 'ctrl';
+					}
+				}
+
+				return $('<kbd />', {
+					class: 'key-' + key,
+				}).html(key);
+			},
+
+			render: function() {
+				var thisClass = this;
+
+				var $thisModal = this.$el;
+
+				et_pb_close_all_right_click_options();
+
+				$thisModal.html( this.template() );
+
+				var $shortcutTab = $thisModal.find('.et-pb-shortcuts-tab');
+
+				_.each(et_pb_help_options.shortcuts, function(shortcutSets){
+					_.each(shortcutSets, function(shortcutSet) {
+						if (_.isUndefined(shortcutSet.title)) {
+							// Define item
+							var $shortcutItem = $('<p />', {
+								class: 'et-pb-shortcut-item'
+							});
+
+							// Build shortcut keys
+							var $shortcutKeys = $('<span />', {
+								class: 'et-pb-shortcut-keys'
+							});
+
+							_.each(shortcutSet.kbd, function(shortcutKey, shortcutKeyIndex) {
+								// Append + divider
+								if (shortcutKeyIndex > 0) {
+									$shortcutKeys.append(' + ');
+								}
+
+								if (_.isArray(shortcutKey)) {
+									_.each(shortcutKey, function(shortcutOption, shortcutOptionIndex) {
+										if (shortcutOptionIndex > 0) {
+											$shortcutKeys.append(' / ');
+										}
+
+										$shortcutKeys.append(
+											$('<kbd />').html(shortcutOption)
+										);
+									});
+								} else {
+									$shortcutKeys.append(
+										// $('<kbd />').html(shortcutKey)
+										thisClass.renderKbd(shortcutKey)
+									);
+								}
+							});
+
+							// Append shortcut keys
+							$shortcutItem.append($shortcutKeys);
+
+							// Append description
+							$shortcutItem.append(
+								$('<span />', {
+									class: 'et-pb-shortcut-desc'
+								}).html(shortcutSet.desc)
+							);
+
+							// Append  Item
+							$shortcutTab.append($shortcutItem);
+						} else {
+							$shortcutTab.append(
+								$('<h2 />', {class: 'et-pb-shortcut-subtitle'}).html(shortcutSet.title)
+							);
+						}
+					});
+				});
+
+				return this;
+			}
+		});
 
 		ET_PageBuilder.RightClickOptionsView = window.wp.Backbone.View.extend( {
 
@@ -12019,7 +12135,7 @@ window.et_builder_version = '3.0.15';
 									}
 								}
 
-								if ( '' !== saved_tabs && ( 'general' === saved_tabs || 'all' === saved_tabs ) ) {
+								if ( '' !== saved_tabs && ( -1 !== saved_tabs.indexOf( 'general' ) || 'all' === saved_tabs ) ) {
 									view_settings.model.set( 'et_pb_content_new', shortcode_content, { silent : true } );
 								}
 						} );
@@ -12186,11 +12302,7 @@ window.et_builder_version = '3.0.15';
 		 * Check whether the Yoast SEO plugin is active
 		 */
 		function et_pb_is_yoast_seo_active() {
-			if ( typeof YoastSEO !== 'undefined' && typeof YoastSEO === 'object' ) {
-				return true;
-			}
-
-			return false;
+			return ( 'object' === typeof YoastSEO && YoastSEO.hasOwnProperty( 'app' ) )
 		}
 
 		/**
@@ -12270,6 +12382,8 @@ window.et_builder_version = '3.0.15';
 				if ($core_close_button.length) {
 					$core_close_button.click();
 				}
+
+				$( 'body' ).removeClass( 'et-core-nbfc' );
 			}
 
 			// Hotkeys that should work regardless current focus state
@@ -12612,6 +12726,11 @@ window.et_builder_version = '3.0.15';
 							} ] );
 							processed_row_view = ET_PageBuilder_Layout.getView( module_id );
 						} else {
+							// structure edit is not allowed for global Rows
+							if ( ( typeof row_view.model.attributes.et_pb_global_module !== 'undefined' && '' !== row_view.model.attributes.et_pb_global_module ) || ( 'row' === et_pb_options.layout_type && 'global' === et_pb_options.is_global_template ) ) {
+								return;
+							}
+
 							// changing structure of exisitng Row
 							processed_row_view = row_view;
 							is_structure_change = true;
@@ -12673,6 +12792,25 @@ window.et_builder_version = '3.0.15';
 				if ( layoutsList.length && layoutsList[ selectedLayout ] ) {
 					$( layoutsList[ selectedLayout ] ).trigger( 'click' );
 				}
+			} else if (event.key === '?' || event.keyCode === 191) {
+				var isHelpModal = $('.et_pb_modal_settings_container').attr('data-open_view') === 'help';
+				// Help : `?`
+				if ( $('.et-pb-modal-close').length ) {
+					$('.et-pb-modal-close').click();
+				}
+
+				if (isHelpModal) {
+					return;
+				}
+
+				view = new ET_PageBuilder.ModalView( {
+					attributes : {
+						'data-open_view' : 'help'
+					},
+					view : this
+				} );
+
+				$('body').append( view.render().el );
 			}
 		});
 

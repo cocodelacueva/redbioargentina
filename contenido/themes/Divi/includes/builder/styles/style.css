@@ -247,10 +247,10 @@ a.et-pb-clone.et-pb-advanced-setting-clone { left: 44px; font-size: 33px; top: 9
 @-o-keyframes et_pb_fade_in_small { 0% { opacity: 0; } 100% { opacity: 1; } }
 @keyframes et_pb_fade_in_small { 0% { opacity: 0; } 100% { opacity: 1; } }
 
-@-webkit-keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9); } 100% { opacity: 1; transform: scale(1,1); } }
-@-moz-keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9) } 100% { opacity: 1; transform: scale(1,1); } }
-@-o-keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9) } 100% { opacity: 1; transform: scale(1,1); } }
-@keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9); } 100% { opacity: 1; transform: scale(1,1); } }
+@-webkit-keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9); } 100% { opacity: 1; transform: scale(1,1); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } }
+@-moz-keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9) } 100% { opacity: 1; transform: scale(1,1); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } }
+@-o-keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9) } 100% { opacity: 1; transform: scale(1,1); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } }
+@keyframes et_pb_fade_in_scale { 0% { opacity: 0; transform: scale(.9,.9); } 100% { opacity: 1; transform: scale(1,1); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } }
 
 @-webkit-keyframes et_pb_fade_out_scale { 0% { opacity: 1; transform: scale(1,1); } 100% { opacity: 0; transform: scale(.9,.9); } }
 @-moz-keyframes et_pb_fade_out_scale { 0% { opacity: 1; transform: scale(1,1); } 100% { opacity: 0; transform: scale(.9,.9); } }
@@ -596,7 +596,8 @@ span.et-pb-reset-settings:after, .et_pb_saved_global_modal .et_pb_saved_global_t
 .et_pb_modal_settings_container .et_pb_modal_no_tabs .et-pb-main-settings { top: -58px; }
 
 .et-pb-saved-modules-tab,
-.et-pb-all-modules-tab { top: 0; right: 0; bottom: 0; left: 0; padding: 40px; overflow: auto; }
+.et-pb-all-modules-tab,
+.et-pb-shortcuts-tab { top: 0; right: 0; bottom: 0; left: 0; padding: 40px; overflow: auto; }
 .et-wp-after-3_8 .et-pb-main-settings { bottom: 66px; }
 .et-wp-after-3_8 .et_pb_no_editing .et-pb-main-settings { bottom: 0; }
 .et-pb-main-settings-full { bottom: 0 !important; }
@@ -2613,3 +2614,55 @@ a.et-pb-ab-refresh-stats span.icon:after { font-family: 'etbuilder'; font-size: 
 .et_pb_prompt_field_list select { width: 313px; }
 .et_pb_prompt_field .et_pb_yes_no_button_wrapper { float: right; }
 .et-pb-app-settings-button object { pointer-events: none; }
+
+/* Help Modal */
+.et-pb-shortcut-subtitle {
+	margin-top: 40px;
+	font-size: 18px;
+	font-weight: 300;
+	font-size: 22px;
+	margin: 1em 0 2em;
+}
+
+.et-pb-shortcut-subtitle:first-child {
+	margin-top: 0;
+}
+
+.et-pb-shortcut-keys {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.et-pb-shortcut-desc {
+	display: inline-block;
+	width: 50%;
+	padding: 4px 0;
+	vertical-align: top;
+	font-size: 14px;
+}
+
+.et-pb-shortcut-keys kbd {
+	box-shadow: 0 1px 4px rgba(50, 55, 60, 0.15);
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 4px;
+	background: white;
+	margin: 0 5px 10px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.et-pb-shortcut-keys kbd.key-cmd {
+	position: relative;
+	padding-left: 27px;
+}
+
+.et-pb-shortcut-keys kbd.key-cmd:before {
+	content: '\2318';
+	position: absolute;
+	top: 4px;
+	left: 10px;
+}
